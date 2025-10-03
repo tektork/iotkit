@@ -7,11 +7,8 @@ void setup()
 }
 void loop()
 {
-  int ldrReading = analogRead(39);
-  Serial.println(ldrReading);
-  delay(500);
-}
   int ldrReading = analogRead(39); // read from the LDR on pin 39 
   Serial.println(ldrReading); // send reading over serial
   delay(500); // wait 500ms
+
 } // repeat
