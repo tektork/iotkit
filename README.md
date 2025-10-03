@@ -1,4 +1,4 @@
-![The Tektork IoT V1.0](assets/label/IoT1.png)
+![The Tektork IoT V1.0](images/IoT1.png)
 
 <h1 align="center">Tektork IoT Kit</h1>
 
@@ -76,4 +76,9 @@ Under the guidance of our mentor:
 *Dr. V Ananthanarayanan*   
 Associate Professor -School of Computing  
 *Amrita Vishwa Vidyapeetham, Coimbatore*
+
+Project funded by:  
+*Tektork Private Limited*   
+Coimbatore - 641046  
+
 
