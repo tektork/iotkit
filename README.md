@@ -1,4 +1,4 @@
-![The Tektork IoT V1.0](assets/label/esp32-label.png)
+![The Tektork IoT V1.0](assets/label/IoT1.png)
 
 <h1 align="center">Tektork IoT Kit</h1>
 
