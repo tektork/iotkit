@@ -1,5 +1,6 @@
 ![The Tektork IoT V1.0](images/IoT1.png)
-
+![The Tektork IoT V1.0](images/IoT3.png)
+![The Tektork IoT V1.0](images/IoT2.png)
 <h1 align="center">Tektork IoT Kit</h1>
 
 A tutorial repository for the IoT end device board - *Tektork IoT Kit* developed by 
