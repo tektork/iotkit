@@ -1,12 +1,12 @@
 
 # Connections
 
-| ESP32 | BMP280 |
-| ----- | ----------- |
-| GPIO22 | SCL |
-| GPIO23 | SDA |
-| 3.3V | Vin |
-| GND | GND |
+| Tek IoT | BMP280 |
+| -----   | ------ |
+| GPIO22  | SCL |
+| GPIO23  | SDA |
+| 3.3V    | Vin |
+| GND     | GND |
 
 SCL: Clock
 SDA: Data
