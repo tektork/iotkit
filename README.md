@@ -47,10 +47,10 @@ The following modules are a part of the repository -
 
 | Module | Description|
 | --------- | ------------ |
-| [*basics*](basics/) | Sample code and explanations covering the basics of working with the Tektork IoT Kit V1.0 , and embedded devices in general.  |
+| [*basics*](basics/) | Sample code and explanations covering the basics of working with the Tektork IoT Kit V1.0 , and embedded devices in general. Digital Input, Digital Output, Analog Input, Serial Communication  |
 | [*modules*](modules/) | Sample code and explanations to work with various sensors and modules.  |
 | [*wireless*](wireless/) | Sample code and explanation for working with the board's built-in WiFi and Bluetooth LE |
-| [*docs*](docs) | Complete documentation of the board. |
+| [*docs*](docs) | Complete documentation of the board including manual |
 | [*assets*]() | Contains all screenshots embedded in the tutorial documentation. |
 
 A reference to all the acronyms used during this tutorial can be found [here](./docs/Interfaces.md). 
