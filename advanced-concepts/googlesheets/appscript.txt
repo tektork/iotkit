@@ -1,0 +1,48 @@
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSheet();
+    
+    // Parse the incoming data
+    var data = JSON.parse(e.postData.contents);
+    
+    // Get current timestamp
+    var timestamp = new Date();
+    
+    // Append row with timestamp, pot value, and LDR value
+    sheet.appendRow([timestamp, data.pot, data.ldr]);
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({status: 'success'}))
+      .setMimeType(ContentService.MimeType.JSON);
+      
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({status: 'error', message: error.toString()}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doGet(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSheet();
+    
+    // Get parameters from URL
+    var pot = e.parameter.pot;
+    var ldr = e.parameter.ldr;
+    
+    // Get current timestamp
+    var timestamp = new Date();
+    
+    // Append row with timestamp, pot value, and LDR value
+    sheet.appendRow([timestamp, pot, ldr]);
+    
+    return ContentService
+      .createTextOutput('Data logged successfully')
+      .setMimeType(ContentService.MimeType.TEXT);
+      
+  } catch (error) {
+    return ContentService
+      .createTextOutput('Error: ' + error.toString())
+      .setMimeType(ContentService.MimeType.TEXT);
+  }
+}
