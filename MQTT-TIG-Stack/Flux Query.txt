@@ -1,0 +1,14 @@
+For LDR
+
+from(bucket: "SensorData")
+  |> range(start: -6h)
+  |> filter(fn: (r) => r._measurement == "esp32_sensor_data")
+  |> filter(fn: (r) => r._field == "light_percent")
+
+
+For Potentiometer
+
+from(bucket: "SensorData")
+  |> range(start: -6h)
+  |> filter(fn: (r) => r._measurement == "esp32_sensor_data")
+  |> filter(fn: (r) => r._field == "pot_percent")
