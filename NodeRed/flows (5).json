@@ -1,0 +1,286 @@
+[
+    {
+        "id": "tab1",
+        "type": "tab",
+        "label": "ESP32 LED and Sensors",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "mqtt_in_pot",
+        "type": "mqtt in",
+        "z": "tab1",
+        "name": "POT Sensor",
+        "topic": "esp32/pot1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 150,
+        "y": 60,
+        "wires": [
+            [
+                "ui_gauge_pot"
+            ]
+        ]
+    },
+    {
+        "id": "ui_gauge_pot",
+        "type": "ui_gauge",
+        "z": "tab1",
+        "name": "Pot Value",
+        "group": "0968615029734b0d",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "POT Value",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 4095,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 400,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "mqtt_in_ldr",
+        "type": "mqtt in",
+        "z": "tab1",
+        "name": "LDR Sensor",
+        "topic": "esp32/ldr1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "ui_gauge_ldr"
+            ]
+        ]
+    },
+    {
+        "id": "ui_gauge_ldr",
+        "type": "ui_gauge",
+        "z": "tab1",
+        "name": "LDR Value",
+        "group": "0968615029734b0d",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "LDR Value",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 4095,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 400,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "inject_led3_on",
+        "type": "inject",
+        "z": "tab1",
+        "name": "LED1 ON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "esp32/led3",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "inject_led3_off",
+        "type": "inject",
+        "z": "tab1",
+        "name": "LED1 OFF",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "esp32/led3",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "inject_led4_on",
+        "type": "inject",
+        "z": "tab1",
+        "name": "LED2 ON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "esp32/led4",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "inject_led4_off",
+        "type": "inject",
+        "z": "tab1",
+        "name": "LED2 OFF",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "esp32/led4",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_out",
+        "type": "mqtt out",
+        "z": "tab1",
+        "name": "LED Control",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_broker",
+        "x": 400,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "test.mosquitto.org",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": ""
+    },
+    {
+        "id": "0968615029734b0d",
+        "type": "ui_group",
+        "name": "Sensor Dashboard",
+        "tab": "b85b6665c8e23edd",
+        "order": 1,
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "b85b6665c8e23edd",
+        "type": "ui_tab",
+        "name": "Sensor Dash",
+        "icon": "dashboard"
+    },
+    {
+        "id": "b6918364717fd587",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
